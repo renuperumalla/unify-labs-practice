@@ -1,0 +1,67 @@
+<!-- 
+  DAY 23 PRACTICE LAB
+  Practice the concepts from today's video lecture below.
+-->
+<div id="root">
+    <div class="lab-container">
+        <h1>Lab <span>Session</span> {{ selectedDay }}</h1>
+        <p>Console is active. Use the <strong>JS Tab</strong> to practice logic.</p>
+        <div id="display" class="debug-panel">Waiting for JS input...</div>
+    </div>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unify Labs Interns</title>
+</head>
+<body>
+    <h2>Add Intern</h2>
+
+    <form id="internForm">
+        <input type="text" id="name" placeholder="Name" required><br><br>
+        <input type="text" id="role" placeholder="Role" required><br><br>
+        <input type="date" id="joinedDate" required><br><br>
+        <button type="submit">Add Intern</button>
+    </form>
+
+    <h2>Intern List</h2>
+    <ul id="internList"></ul>
+
+<script>
+document.getElementById("internForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const intern = {
+        name: document.getElementById("name").value,
+        role: document.getElementById("role").value,
+        joinedDate: document.getElementById("joinedDate").value
+    };
+
+    await fetch("/add-intern", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(intern)
+    });
+
+    alert("Intern Added");
+    loadInterns();
+});
+
+async function loadInterns() {
+    const res = await fetch("/interns");
+    const data = await res.json();
+
+    const list = document.getElementById("internList");
+    list.innerHTML = "";
+
+    data.forEach(intern => {
+        const li = document.createElement("li");
+        li.textContent = `${intern.name} - ${intern.role}`;
+        list.appendChild(li);
+    });
+}
+
+loadInterns();
+</script>
+</body>
+</html>
