@@ -9,3 +9,37 @@
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project NEXUS</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>🚀 NEXUS Crypto Hub</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search coins..." />
+      
+      <select id="sortSelect">
+        <option value="market_cap_desc">Market Cap ↓</option>
+        <option value="market_cap_asc">Market Cap ↑</option>
+        <option value="price_desc">Price ↓</option>
+        <option value="price_asc">Price ↑</option>
+      </select>
+
+      <button id="themeToggle">🌙 Toggle Mode</button>
+    </div>
+  </header>
+
+  <div id="notification"></div>
+  <div id="loader" class="loader hidden"></div>
+  <section id="cardContainer"></section>
+
+  <script type="module" src="./js/App.js"></script>
+</body>
+</html>

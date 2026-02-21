@@ -16,4 +16,77 @@ p { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
     padding: 20px; border-radius: 15px;
     font-family: 'JetBrains Mono'; color: #f97316;
     font-size: 0.8rem; text-transform: uppercase;
+}body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+header {
+  padding: 1rem;
+  background: #111;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+body.dark .card {
+  background: #2c2c2c;
+}
+
+.card img {
+  width: 40px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.loader {
+  margin: 2rem auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.notification {
+  padding: 1rem;
+  text-align: center;
+  color: red;
 }
