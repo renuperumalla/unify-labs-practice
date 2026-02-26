@@ -9,3 +9,42 @@
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Master Data Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📊 Task Master Data Dashboard</h1>
+
+        <button id="processBtn">Process Data</button>
+
+        <div class="card">
+            <h2>✅ Completed Tasks</h2>
+            <ul id="completedList"></ul>
+        </div>
+
+        <div class="card">
+            <h2>⏳ Pending Tasks</h2>
+            <ul id="pendingList"></ul>
+        </div>
+
+        <div class="card">
+            <h2>💰 Prices With Tax (10%)</h2>
+            <ul id="priceList"></ul>
+        </div>
+
+        <div class="card">
+            <h2>🏢 Company Budget Summary</h2>
+            <p id="totalBudget"></p>
+            <p id="averageExpense"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

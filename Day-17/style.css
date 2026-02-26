@@ -17,3 +17,50 @@ p { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
     font-family: 'JetBrains Mono'; color: #f97316;
     font-size: 0.8rem; text-transform: uppercase;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.container {
+    width: 700px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background: #5b86e5;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
