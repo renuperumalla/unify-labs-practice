@@ -8,4 +8,48 @@
         <p>Console is active. Use the <strong>JS Tab</strong> to practice logic.</p>
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
-</div>
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌤 Real-Time Weather Dashboard</h1>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter City (e.g., London)">
+            <button id="searchBtn">Get Weather</button>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div id="weatherCard" class="card hidden">
+            <h2 id="cityName"></h2>
+            <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+            <p><strong>Wind Speed:</strong> <span id="wind"></span> km/h</p>
+            <p><strong>Weather Code:</strong> <span id="weatherCode"></span></p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <!-- 🌍 WMO Official Link -->
+        <div class="external-link">
+            <a href="https://worldweather.wmo.int/en/home.html" 
+               target="_blank" 
+               rel="noopener noreferrer">
+               🌍 View Official World Weather (WMO)
+            </a>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
