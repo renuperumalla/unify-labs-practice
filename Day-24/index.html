@@ -9,3 +9,60 @@
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
 </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🛒 E-Commerce Data Layer</h1>
+
+    <div class="buttons">
+        <button onclick="seedDatabase()">Seed Database</button>
+        <button onclick="getElectronics()">View Electronics</button>
+        <button onclick="getTopProducts()">Top 2 Expensive</button>
+    </div>
+
+    <div id="output"></div>
+
+<script>
+async function seedDatabase() {
+    const res = await fetch("/seed");
+    const text = await res.text();
+    document.getElementById("output").innerHTML = `<p>${text}</p>`;
+}
+
+async function getElectronics() {
+    const res = await fetch("/electronics");
+    const data = await res.json();
+    displayProducts(data);
+}
+
+async function getTopProducts() {
+    const res = await fetch("/top-products");
+    const data = await res.json();
+    displayProducts(data);
+}
+
+function displayProducts(products) {
+    let html = "";
+    products.forEach(p => {
+        html += `
+            <div class="card">
+                <h3>${p.name}</h3>
+                <p><strong>Category:</strong> ${p.category}</p>
+                <p><strong>Price:</strong> $${p.price}</p>
+                <p><strong>Stock:</strong> ${p.stock}</p>
+                <p><strong>Color:</strong> ${p.specs.color}</p>
+                <p><strong>Weight:</strong> ${p.specs.weight}</p>
+            </div>
+        `;
+    });
+    document.getElementById("output").innerHTML = html;
+}
+</script>
+
+</body>
+</html>
