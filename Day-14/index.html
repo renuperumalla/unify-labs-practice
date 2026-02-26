@@ -9,3 +9,30 @@
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎯 Number Guessing Game</h1>
+  <p>Guess a number between 1 and 100. You have 7 attempts!</p>
+
+  <div class="game-area">
+    <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+    <button id="guessBtn">Submit Guess</button>
+  </div>
+
+  <p id="feedback"></p>
+  <p id="attempts">Attempts left: 7</p>
+  <button id="resetBtn">Restart Game</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
