@@ -17,3 +17,57 @@ p { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
     font-family: 'JetBrains Mono'; color: #f97316;
     font-size: 0.8rem; text-transform: uppercase;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.pet-card {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.stats {
+    margin: 15px 0;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#feedBtn {
+    background: #4CAF50;
+    color: white;
+}
+
+#playBtn {
+    background: #2196F3;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.status {
+    margin-top: 15px;
+    font-style: italic;
+    min-height: 25px;
+}

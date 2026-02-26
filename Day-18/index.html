@@ -9,3 +9,39 @@
         <div id="display" class="debug-panel">Waiting for JS input...</div>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Pet Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🐾 Digital Pet Simulator</h1>
+
+        <div class="pet-card">
+            <h2 id="petName"></h2>
+            <p id="petType"></p>
+
+            <div class="stats">
+                <p>❤️ Health: <span id="health"></span></p>
+                <p>🍖 Hunger: <span id="hunger"></span></p>
+                <p>⚡ Energy: <span id="energy"></span></p>
+            </div>
+
+            <div class="buttons">
+                <button id="feedBtn">Feed</button>
+                <button id="playBtn">Play</button>
+            </div>
+
+            <div class="status">
+                <p id="statusMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
