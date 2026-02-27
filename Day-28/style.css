@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=JetBrains+Mono:wght@700&display=swap');
+
+body {
+    margin: 0; background: #000; color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex; align-items: center; justify-content: center; height: 100vh;
+}
+
+.lab-container { text-align: center; max-width: 500px; }
+h1 { font-size: 2.5rem; letter-spacing: -2px; margin-bottom: 20px; }
+h1 span { color: #f97316; }
+p { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+
+.debug-panel {
+    background: #111; border: 1px solid #222; 
+    padding: 20px; border-radius: 15px;
+    font-family: 'JetBrains Mono'; color: #f97316;
+    font-size: 0.8rem; text-transform: uppercase;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-card, .list-card {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 5px;
+  background: #667eea;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button.delete {
+  background: #e63946;
+}
+
+button.refresh {
+  background: #2a9d8f;
+}
+
+.product {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}

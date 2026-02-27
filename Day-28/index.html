@@ -1,0 +1,97 @@
+<!-- 
+  DAY 28 PRACTICE LAB
+  Practice the concepts from today's video lecture below.
+-->
+<div id="root">
+    <div class="lab-container">
+        <h1>Lab <span>Session</span> {{ selectedDay }}</h1>
+        <p>Console is active. Use the <strong>JS Tab</strong> to practice logic.</p>
+        <div id="display" class="debug-panel">Waiting for JS input...</div>
+    </div>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>☁️ Cloud Shop Manager</h1>
+
+  <div class="form-card">
+    <h2>Add Product</h2>
+    <input id="name" placeholder="Product Name">
+    <input id="price" type="number" placeholder="Price">
+    <input id="stock" type="number" placeholder="Stock">
+    <button onclick="addProduct()">Add</button>
+  </div>
+
+  <div class="list-card">
+    <h2>Products (Atlas Cloud)</h2>
+    <button class="refresh" onclick="fetchProducts()">Refresh</button>
+    <div id="products"></div>
+  </div>
+</div>
+
+<script>
+const API = "/products";
+
+async function fetchProducts() {
+  const res = await fetch(API);
+  const data = await res.json();
+
+  const container = document.getElementById("products");
+  container.innerHTML = "";
+
+  data.forEach(p => {
+    container.innerHTML += `
+      <div class="product">
+        <h3>${p.name}</h3>
+        <p>💲 ${p.price}</p>
+        <p>📦 Stock: ${p.stock}</p>
+        <input type="number" id="stock-${p._id}" placeholder="New stock">
+        <button onclick="updateStock('${p._id}')">Update</button>
+        <button class="delete" onclick="deleteProduct('${p._id}')">Delete</button>
+      </div>
+    `;
+  });
+}
+
+async function addProduct() {
+  const name = name.value;
+  const price = price.value;
+  const stock = stock.value;
+
+  await fetch(API, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({name, price, stock})
+  });
+
+  fetchProducts();
+}
+
+async function updateStock(id) {
+  const stock = document.getElementById(`stock-${id}`).value;
+
+  await fetch(`${API}/${id}`, {
+    method: "PATCH",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({stock})
+  });
+
+  fetchProducts();
+}
+
+async function deleteProduct(id) {
+  await fetch(`${API}/${id}`, { method: "DELETE" });
+  fetchProducts();
+}
+
+fetchProducts();
+</script>
+
+</body>
+</html>
